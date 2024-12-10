@@ -6,7 +6,7 @@ const SideBar = () => {
   const [activeLink, setActiveLink] = useState<number | undefined>(undefined);
 
   const nav = [
-    { id: 1, title: "Some Important Link 1", link: "/" },
+    { id: 1, title: "React Redux", link: "/redux" },
     { id: 2, title: "Some Important Link 2", link: "/" },
     { id: 3, title: "Some Important Link 3", link: "/" },
     { id: 4, title: "Some Important Link 4", link: "/" },
