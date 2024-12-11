@@ -136,10 +136,13 @@ const CounterForRedux: FC = () => {
 const ReactRedux: FC = () => {
   return (
     <Fragment>
-      <Link href="https://www.youtube.com/watch?v=NqzdVN2tyvQ" target="blank">
-        Tutorial
-      </Link>
       <h1>React Redux</h1>
+      <div className="link">
+        <Link href="https://www.youtube.com/watch?v=NqzdVN2tyvQ" target="blank">
+          Tutorial
+        </Link>
+      </div>
+
       <div>
         Redux is a predictable state management library for JavaScript
         applications. It works seamlessly with frameworks like React, Angular,

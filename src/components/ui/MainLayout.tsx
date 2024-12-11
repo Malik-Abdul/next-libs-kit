@@ -1,5 +1,5 @@
 "use client";
-import { FC, Fragment, useState } from "react";
+import { FC, Fragment } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import SideBar from "./SideBar";
