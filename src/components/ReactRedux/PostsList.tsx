@@ -7,7 +7,6 @@ import { selectAllPosts } from "@/store/slices/postsSlice";
 
 const PostsList: FC = () => {
   const posts = useSelector(selectAllPosts);
-
   const renderPosts = posts
     ? posts.map((post) => (
         <article className="posts" key={post.id}>
