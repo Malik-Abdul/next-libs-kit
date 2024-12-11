@@ -136,10 +136,13 @@ const CounterForRedux: FC = () => {
 const ReactRedux: FC = () => {
   return (
     <Fragment>
-      <Link href="https://www.youtube.com/watch?v=NqzdVN2tyvQ" target="blank">
-        Tutorial
-      </Link>
       <h1>React Redux</h1>
+      <div className="link">
+        <Link href="https://www.youtube.com/watch?v=NqzdVN2tyvQ" target="blank">
+          Tutorial
+        </Link>
+      </div>
+
       <div>
         Redux is a predictable state management library for JavaScript
         applications. It works seamlessly with frameworks like React, Angular,
@@ -193,19 +196,19 @@ const ReactRedux: FC = () => {
         from ComponentA to a parent component (let&apos;s call it ComponentC),
         which can then pass the data as props to both ComponentA and ComponentB.
         Later, another requirement arises: ComponentD also needs to display the
-        user’s name. To handle this, we need to lift the state again, this time
-        to another higher-level component, ComponentE. Then, another requirement
-        comes in: the username must also be displayed in ComponentF. This would
-        mean lifting the state even higher, possibly to the root App component.
-        As the requirements grow, managing this state becomes increasingly
-        frustrating. Every time the state is lifted, it must be passed as props
-        through all the intermediate components, even if they don&apos;t need
-        the userName prop. This results in a lot of unnecessary prop drilling
-        and increases the complexity of the application. This is where Redux can
-        help. By centralizing the state in a global store, we can avoid prop
-        drilling entirely. Any component that needs access to the userName can
-        directly subscribe to the store, making the application much easier to
-        maintain and scale.
+        user&apos;s name. To handle this, we need to lift the state again, this
+        time to another higher-level component, ComponentE. Then, another
+        requirement comes in: the username must also be displayed in ComponentF.
+        This would mean lifting the state even higher, possibly to the root App
+        component. As the requirements grow, managing this state becomes
+        increasingly frustrating. Every time the state is lifted, it must be
+        passed as props through all the intermediate components, even if they
+        don&apos;t need the userName prop. This results in a lot of unnecessary
+        prop drilling and increases the complexity of the application. This is
+        where Redux can help. By centralizing the state in a global store, we
+        can avoid prop drilling entirely. Any component that needs access to the
+        userName can directly subscribe to the store, making the application
+        much easier to maintain and scale.
       </div>
 
       <StateGraphRedux />
