@@ -10,7 +10,7 @@ const ReactQuery = () => {
     <Fragment>
       <div>
         <h1>React Query</h1>
-        <h2>What is polling?" or "How does polling work?</h2>
+        <h2>What is polling?&quot; or &quot;How does polling work?</h2>
 
         <div>
           Polling is a technique used in software development to repeatedly
@@ -66,7 +66,7 @@ const ReactQuery = () => {
             </li>
           </ul>
         </div>
-        {/* <Polling /> */}
+        <Polling />
         <div className="jsxCode">
           <strong className="example">Example: 1</strong>
           <pre>
@@ -123,7 +123,7 @@ const ReactQuery = () => {
             <code>{jsxCodeEx2}</code>
           </pre>
         </div>
-        {/* <LongPolling /> */}
+        <LongPolling />
       </div>
 
       <hr />

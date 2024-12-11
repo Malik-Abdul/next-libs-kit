@@ -1,9 +1,7 @@
 "use client";
-import { Fragment, useContext, useEffect, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 
 import Link from "next/link";
-
-import { useRouter } from "next/router";
 
 import ThemeContext from "@/context/ThemeContext";
 import DropDown from "./DropDown";

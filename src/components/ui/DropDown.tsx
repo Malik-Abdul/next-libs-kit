@@ -1,6 +1,13 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
+type MenuItem = {
+  id?: number;
+  title: string;
+  url?: string; // URL is optional because submenus don't have URLs
+  subMenu?: MenuItem[]; // Submenu is optional and can be an array of MenuItems
+};
+
 const DropDown = ({ theme }: { theme: string }) => {
   const [openMenu, setOpenMenu] = useState<Record<string, boolean>>({});
   const [isMounted, setIsMounted] = useState(false);
@@ -17,15 +24,17 @@ const DropDown = ({ theme }: { theme: string }) => {
     }));
   };
 
-  const renderSubMenu = (subMenu: any[]) => {
+  const renderSubMenu = (subMenu: MenuItem[]) => {
     return (
       <ul className="submenu">
         {subMenu.map((item, index) => (
           <li key={index}>
             <div
               onClick={() => {
-                item.subMenu && toggleMenu(item.title),
-                  setActiveLink(item.id ? item.id : 0);
+                if (item.subMenu) {
+                  toggleMenu(item.title); // Toggle submenu visibility
+                }
+                setActiveLink(item.id ? item.id : 0); // Set active link
               }}
               className="submenu-item"
             >
@@ -98,8 +107,10 @@ const DropDown = ({ theme }: { theme: string }) => {
         <li key={index}>
           <div
             onClick={() => {
-              item.subMenu && toggleMenu(item.title),
-                setActiveLink(item.id ? item.id : 0);
+              if (item.subMenu) {
+                toggleMenu(item.title); // Toggle submenu visibility
+              }
+              setActiveLink(item.id ? item.id : 0); // Set active link
             }}
             className="menu-item"
           >

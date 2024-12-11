@@ -152,7 +152,7 @@ const ReactRedux: FC = () => {
       </div>
 
       <div>
-        In a React app with a Login Form, the component's state would be an
+        In a React app with a Login Form, the component&apos;s state would be an
         object that includes userName, password, and a submitting flag to
         indicate whether the submission process is happening in the background.
       </div>
@@ -163,8 +163,8 @@ const ReactRedux: FC = () => {
         </pre>
       </div>
       <div>
-        If we need to display a list of users, the component's state would be an
-        object containing an array of users.
+        If we need to display a list of users, the component&apos;s state would
+        be an object containing an array of users.
       </div>
       <div className="jsxCode">
         <strong className="example">Example: 2</strong>
@@ -190,32 +190,32 @@ const ReactRedux: FC = () => {
       <StateGraph />
       <div>
         Imagine ComponentA has an input field that allows users to enter their
-        name, and this input is saved locally within the component's state. Now,
-        there's a new requirement to display the user's name in ComponentB. How
-        can we achieve this? One approach is to lift the state from ComponentA
-        to a parent component (let's call it ComponentC), which can then pass
-        the data as props to both ComponentA and ComponentB. Later, another
-        requirement arises: ComponentD also needs to display the user’s name. To
-        handle this, we need to lift the state again, this time to another
-        higher-level component, ComponentE. Then, another requirement comes in:
-        the username must also be displayed in ComponentF. This would mean
-        lifting the state even higher, possibly to the root App component. As
-        the requirements grow, managing this state becomes increasingly
-        frustrating. Every time the state is lifted, it must be passed as props
-        through all the intermediate components, even if they don't need the
-        userName prop. This results in a lot of unnecessary prop drilling and
-        increases the complexity of the application. This is where Redux can
-        help. By centralizing the state in a global store, we can avoid prop
-        drilling entirely. Any component that needs access to the userName can
-        directly subscribe to the store, making the application much easier to
-        maintain and scale.
+        name, and this input is saved locally within the component&apos;s state.
+        Now, there&apos;s a new requirement to display the user&apos;s name in
+        ComponentB. How can we achieve this? One approach is to lift the state
+        from ComponentA to a parent component (let&apos;s call it ComponentC),
+        which can then pass the data as props to both ComponentA and ComponentB.
+        Later, another requirement arises: ComponentD also needs to display the
+        user&apos;s name. To handle this, we need to lift the state again, this
+        time to another higher-level component, ComponentE. Then, another
+        requirement comes in: the username must also be displayed in ComponentF.
+        This would mean lifting the state even higher, possibly to the root App
+        component. As the requirements grow, managing this state becomes
+        increasingly frustrating. Every time the state is lifted, it must be
+        passed as props through all the intermediate components, even if they
+        don&apos;t need the userName prop. This results in a lot of unnecessary
+        prop drilling and increases the complexity of the application. This is
+        where Redux can help. By centralizing the state in a global store, we
+        can avoid prop drilling entirely. Any component that needs access to the
+        userName can directly subscribe to the store, making the application
+        much easier to maintain and scale.
       </div>
 
       <StateGraphRedux />
       <div>
         Using Redux directly in a React application can be a bit challenging and
-        confusing. That’s why we have the React-Redux package, which serves as
-        the official Redux UI library for React. React-Redux provides several
+        confusing. That&apos;s why we have the React-Redux package, which serves
+        as the official Redux UI library for React. React-Redux provides several
         functions that simplify connecting your React application to Redux,
         making state management more seamless and efficient.
       </div>
@@ -236,7 +236,7 @@ const ReactRedux: FC = () => {
           </li>
           <li>
             This centralization ensures consistency and provides a single source
-            of truth for the entire app's state.
+            of truth for the entire app&apos;s state.
             <ul>
               <strong>Benefits:</strong>
               <li>Simplifies debugging.</li>

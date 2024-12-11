@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
-
+interface Products {
+  id: number;
+  title: string;
+  price: number;
+}
 const Polling = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<Products[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -15,7 +19,7 @@ const Polling = () => {
         throw new Error("Network response was not ok");
       }
       const result = await response.json();
-      setData(result);
+      setData(result.items);
     } catch (err) {
       if (err instanceof Error) {
         setError(err.message);
@@ -40,7 +44,21 @@ const Polling = () => {
   return (
     <div>
       <h2>Polled Data:</h2>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <div>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <ul>
+            {data
+              ? data.map((product) => (
+                  <li key={product.id}>
+                    {product.title} - ${product.price}
+                  </li>
+                ))
+              : ""}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };

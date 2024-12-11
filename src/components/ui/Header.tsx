@@ -6,10 +6,10 @@ import ThemeContext from "@/context/ThemeContext";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState<number | undefined>(undefined);
-  const [selectedOption, setSelectedOption] = useState("dark");
+  // const [selectedOption, setSelectedOption] = useState("dark");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedOption(event.target.value);
+    // setSelectedOption(event.target.value);
     setTheme(event.target.value);
     // setTheme(theme === "dark" ? "light" : "dark");
   };

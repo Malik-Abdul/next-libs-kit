@@ -1,5 +1,3 @@
-import React from "react";
-
 const jsxCodeEx1 = `
 "use client";
 import React, { useState, useEffect } from "react";
@@ -151,21 +149,5 @@ const LongPolling = () => {
 
 export default LongPolling;
 `;
-
-const jsxCodeEx4 = `
-const exampleCode = "This is an example of another code block.";
-`;
-
-// const CodeDisplay = () => (
-//   <pre>
-//     <code>{jsxCodeEx3}</code>
-//   </pre>
-// );
-
-// const CodeDisplay1 = () => (
-//   <pre>
-//     <code>{jsxCodeEx4}</code>
-//   </pre>
-// );
 
 export { jsxCodeEx1, jsxCodeEx2, jsxCodeEx3 };

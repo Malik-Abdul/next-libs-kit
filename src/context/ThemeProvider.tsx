@@ -3,7 +3,10 @@ import React, { FC, Fragment, ReactNode, useEffect, useState } from "react";
 import { ThemeContextProvider } from "./ThemeContext";
 
 const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const storedTheme = localStorage.getItem("theme");
+  let storedTheme: string | null = "dark";
+  if (typeof window !== "undefined") {
+    storedTheme = localStorage.getItem("theme");
+  }
   console.log("storedTheme", storedTheme);
   //   const [theme, setTheme] = useState<string>(storedTheme | "dark");
   const [theme, setTheme] = useState<string>(

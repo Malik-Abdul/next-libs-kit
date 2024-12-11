@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import MainLayout from "@/components/ui/MainLayout";
-import store from "@/store/store";
 import { ReduxProviderWrapper } from "@/store/ReduxProviderWrapper";
 import ThemeProvider from "@/context/ThemeProvider";
 
