@@ -32,8 +32,8 @@ const Polling = () => {
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
   return (
     <div>
       <h2>Polled Data:</h2>
@@ -132,7 +132,7 @@ const LongPolling = () => {
       <h3>Long Polling</h3>
       <div>
         {loading ? (
-          <p>Loading...</p>
+          <div>Loading...</div>
         ) : (
           <ul>
             {products.map((product) => (

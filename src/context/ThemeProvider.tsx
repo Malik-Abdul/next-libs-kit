@@ -8,13 +8,14 @@ const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
     storedTheme = localStorage.getItem("theme");
   }
   console.log("storedTheme", storedTheme);
-  //   const [theme, setTheme] = useState<string>(storedTheme | "dark");
   const [theme, setTheme] = useState<string>(
     storedTheme === "dark" || storedTheme === "light" ? storedTheme : "dark"
   );
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
+    document.body.classList.remove("light", "dark");
+    document.body.classList.add(theme);
   }, [theme]);
   return (
     <Fragment>
@@ -24,4 +25,4 @@ const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
     </Fragment>
   );
 };
-export default ThemeProvider;
+export { ThemeProvider };

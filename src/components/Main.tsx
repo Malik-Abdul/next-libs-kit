@@ -5,7 +5,7 @@ const Main: FC = () => {
   return (
     <Fragment>
       <h2>What is Lorem Ipsum?</h2>
-      <p>
+      <div>
         <strong>Lorem Ipsum</strong> is simply dummy text of the printing and
         typesetting industry. Lorem Ipsum has been the industry&apos;s standard
         dummy text ever since the 1500s, when an unknown printer took a galley
@@ -15,7 +15,7 @@ const Main: FC = () => {
         the release of Letraset sheets containing Lorem Ipsum passages, and more
         recently with desktop publishing software like Aldus PageMaker including
         versions of Lorem Ipsum.
-      </p>
+      </div>
     </Fragment>
   );
 };
