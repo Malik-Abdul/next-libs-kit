@@ -30,6 +30,14 @@ body {
   font-family: sans-serif;
   font-size: 16px;
 }
+body.dark {
+  background-color: #000000;
+  color: #ffffff3d;
+}
+body.light {
+  background-color: #ffffff;
+  color: #888;
+}
 .page-header {
   position: fixed;
   top: 0;
@@ -45,7 +53,7 @@ body {
 }
 .top-menu.dark {
   background-color: #000000;
-  color: #888;
+  color: #ffffff3d;
   border-bottom: 0.5px solid #3c3c43cf;
 }
 .top-menu.light {
@@ -60,7 +68,7 @@ body {
   font-weight: 500;
 }
 .top-eachNave.dark {
-  color: #888;
+  color: #ffffff3d;
 }
 .top-eachNave.light {
   color: #3c3c43cf;
@@ -86,7 +94,7 @@ body {
 }
 .content.dark {
   background-color: #000000;
-  color: #888;
+  color: #ffffff3d;
 }
 .content.light {
   background-color: #ffffff;
@@ -129,8 +137,8 @@ a {
   margin-top: 30px;
 }
 .sideBar.dark {
-  background-color: #000000f5;
-  color: #888;
+  background-color: #0c0c0cf5;
+  color: #ffffff3d;
 }
 .sideBar.light {
   background-color: #f6f6f7;
@@ -151,7 +159,7 @@ a {
   font-weight: 500;
 }
 .side-menu a.side-eachNave.dark {
-  color: #888;
+  color: #ffffff3d;
 }
 .side-menu a.side-eachNave.light {
   color: rgba(60, 60, 67, 0.81);
@@ -196,11 +204,13 @@ article.posts {
 }
 .footer.dark {
   background-color: #000000;
-  color: #888;
+  color: #ffffff3d;
+  border-top: 0.5px solid #3c3c43cf;
 }
 .footer.light {
   background-color: #fff;
   color: #000;
+  border-top: 0.5px solid #e7e7e7;
 }
 
 /* Start */
@@ -243,7 +253,7 @@ article.posts {
   padding: 8px;
 }
 .submenu li a.dark {
-  color: #888;
+  color: #ffffff3d;
 }
 .submenu li a.light {
   color: #888;

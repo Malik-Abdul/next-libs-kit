@@ -1,5 +1,5 @@
 import ReactRedux from "@/components/ReactRedux";
 
-export default function hoc() {
+export default function reactRedux() {
   return <ReactRedux />;
 }

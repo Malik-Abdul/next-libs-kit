@@ -66,7 +66,7 @@ const ReactQuery = () => {
             </li>
           </ul>
         </div>
-        <Polling />
+        {/* <Polling /> */}
         <div className="jsxCode">
           <strong className="example">Example: 1</strong>
           <pre>
@@ -123,7 +123,7 @@ const ReactQuery = () => {
             <code>{jsxCodeEx2}</code>
           </pre>
         </div>
-        <LongPolling />
+        {/* <LongPolling /> */}
       </div>
 
       <hr />

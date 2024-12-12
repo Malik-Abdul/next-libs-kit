@@ -4,7 +4,6 @@ import { Fragment, useContext, useState } from "react";
 import Link from "next/link";
 
 import ThemeContext from "@/context/ThemeContext";
-import DropDown from "./DropDown";
 
 const SideBar = () => {
   const [activeLink, setActiveLink] = useState<number | undefined>(undefined);
@@ -18,11 +17,9 @@ const SideBar = () => {
   const { theme } = context;
 
   const nav = [
-    { id: 1, title: "React Redux", link: "/redux" },
-    { id: 2, title: "React Query", link: "/reactQuery" },
-    { id: 3, title: "Some Important Link 3", link: "/" },
-    { id: 4, title: "Some Important Link 4", link: "/" },
-    { id: 5, title: "Some Important Link 5", link: "/" },
+    { id: 1, title: "React Redux", link: "/react-redux" },
+    { id: 2, title: "React Query", link: "/react-query" },
+    { id: 3, title: "React Context API", link: "/react-context-api" },
   ];
   // data/menu.js
 
@@ -47,11 +44,6 @@ const SideBar = () => {
             </Link>
           ))}
         </nav>
-        <div>
-          {/* Start */}
-          <DropDown theme={theme} />
-          {/* End */}
-        </div>
       </div>
     </Fragment>
   );

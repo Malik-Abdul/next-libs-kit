@@ -11,7 +11,7 @@ const PostsList: FC = () => {
     ? posts.map((post) => (
         <article className="posts" key={post.id}>
           <h3>{post.title}</h3>
-          <p>{post.content.substring(0, 100)}</p>
+          <div>{post.content.substring(0, 100)}</div>
         </article>
       ))
     : "";

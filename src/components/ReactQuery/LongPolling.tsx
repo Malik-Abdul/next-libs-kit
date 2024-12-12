@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
+import ErrorComponent from "./ErrorComponent";
 
 interface Products {
   id: number;
@@ -9,16 +10,24 @@ interface Products {
 const LongPolling = () => {
   const [products, setProducts] = useState<Products[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const fetchProducts = async () => {
     try {
       const response = await fetch(
         `http://localhost:3600/streaming/long-polling`
       );
+      if (!response.ok) {
+        throw new Error(`Failed to fetch: ${response.statusText}`);
+      }
       const data = await response.json();
       setProducts(data.items);
-    } catch (error) {
-      console.error("Error fetching products:", error);
+      setError(null); // Clear any existing error
+    } catch (err) {
+      console.log("Error fetching products:", err);
+      setError(
+        err instanceof Error ? err.message : "An unexpected error occurred"
+      );
     } finally {
       setLoading(false);
     }
@@ -44,7 +53,9 @@ const LongPolling = () => {
       <h3>Long Polling</h3>
       <div>
         {loading ? (
-          <p>Loading...</p>
+          <div>Loading...</div>
+        ) : error ? (
+          <ErrorComponent message={error} />
         ) : (
           <ul>
             {products.map((product) => (
