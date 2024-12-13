@@ -4,67 +4,6 @@ import { JSXContextEX1, JSXContextEX2, JSXContextEX3 } from "./JSXCodes";
 
 import ContextEX2 from "./ContextEX2";
 
-const jsxCodeEx1 = `
-import { createContext, ReactNode } from "react";
-
-const UserContext = createContext("");
-
-const UserContextProvider = UserContext.Provider;
-
-function ContextProvider({ children }: { children: ReactNode }) {
-  return (
-    <UserContextProvider value="userValue">{children}</UserContextProvider>
-  );
-}
-export { UserContext, ContextProvider };
-`;
-
-const jsxCodeEx2 = `
-"use client";
-import {
-  createContext,
-  FC,
-  Fragment,
-  ReactNode,
-  useEffect,
-  useState,
-} from "react";
-
-interface ThemeContextType {
-  theme: string;
-  setTheme: React.Dispatch<React.SetStateAction<string>>;
-}
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-
-const ThemeContextProvider = ThemeContext.Provider;
-
-const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<string>("dark");
-
-  useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme) {
-      setTheme(storedTheme);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-    document.body.classList.remove("light", "dark");
-    document.body.classList.add(theme);
-  }, [theme]);
-  return (
-    <Fragment>
-      <ThemeContextProvider value={{ theme, setTheme }}>
-        {children}
-      </ThemeContextProvider>
-    </Fragment>
-  );
-};
-export { ThemeProvider, ThemeContext };
-
-`;
-
 const ReactContextAPI = () => {
   return (
     <Fragment>
