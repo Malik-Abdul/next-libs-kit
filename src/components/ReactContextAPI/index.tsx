@@ -1,8 +1,14 @@
 import { Fragment } from "react";
 import ContextEX1 from "./ContextEX1";
-import { JSXContextEX1, JSXContextEX2, JSXContextEX3 } from "./JSXCodes";
+import {
+  JSXContextEX1,
+  JSXContextEX2,
+  JSXContextEX3,
+  JSXContextEX4,
+} from "./JSXCodes";
 
 import ContextEX2 from "./ContextEX2";
+import ContextEX3MultiLevelContext from "./ContextEX3MultiLevelContext";
 
 const ReactContextAPI = () => {
   return (
@@ -81,6 +87,15 @@ const ReactContextAPI = () => {
           needs more props from the top, you have to add them at all the
           intermediate levels too.
         </div>
+        <h2>Nested Context</h2>
+        <div className="jsxCode">
+          <strong className="example">JSX ContextEX4</strong>
+          <pre>
+            <code>{JSXContextEX4}</code>
+          </pre>
+        </div>
+
+        <ContextEX3MultiLevelContext />
       </div>
     </Fragment>
   );

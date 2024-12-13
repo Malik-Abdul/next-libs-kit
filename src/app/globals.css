@@ -86,55 +86,16 @@ body.light {
 .theme-switcher {
   padding: 0px 20px;
 }
-.content {
-  flex: 1;
-  padding: 20px;
-  box-sizing: border-box;
-  margin-top: 30px;
-}
-.content.dark {
-  background-color: #000000;
-  color: #bdbdbda8;
-}
-.content.light {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.jsxCode {
-  padding: 15px;
-  margin: 11px 0px;
-  border-radius: 5px;
-}
-.content.dark .jsxCode {
-  background-color: black;
-  color: green;
-  border: 1px solid;
-}
-.content.light .jsxCode {
-  background-color: #f6f6f7;
-  color: green;
-  border: 1px solid #f6f6f7;
-}
-.jsxCode .example {
-  color: rgb(15, 105, 270);
-}
-a {
-  color: #3451b2;
-  text-decoration: none;
-  font-weight: 100;
-  transition: color 0.3s ease;
-}
-
 .main {
   display: flex;
   margin-top: 0px;
 }
 .sideBar {
-  width: 17%;
+  width: 226px;
   padding: 20px;
   box-sizing: border-box;
   margin-top: 30px;
+  flex-shrink: 0;
 }
 .sideBar.dark {
   background-color: #0c0c0cf5;
@@ -171,6 +132,47 @@ a {
 .side-menu a.side-eachNave:hover {
   color: #3451b2 !important;
   font-weight: 500;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 41px;
+  max-width: calc(100% - 226px);
+}
+.content.dark {
+  background-color: #000000;
+  color: #bdbdbda8;
+}
+.content.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.jsxCode {
+  padding: 15px;
+  margin: 11px 0px;
+  border-radius: 5px;
+}
+.content.dark .jsxCode {
+  background-color: black;
+  color: green;
+  border: 1px solid;
+}
+.content.light .jsxCode {
+  background-color: #f6f6f7;
+  color: green;
+  border: 1px solid #f6f6f7;
+}
+.jsxCode .example {
+  color: rgb(15, 105, 270);
+}
+a {
+  color: #3451b2;
+  text-decoration: none;
+  font-weight: 100;
+  transition: color 0.3s ease;
 }
 
 .mermaid-container {
