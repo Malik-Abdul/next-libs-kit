@@ -2,16 +2,13 @@ import React, { Fragment, useContext, useState } from "react";
 
 import Link from "next/link";
 
-import ThemeContext from "@/context/ThemeContext";
+import { ThemeContext } from "@/context/ThemeContext";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState<number | undefined>(undefined);
-  // const [selectedOption, setSelectedOption] = useState("dark");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // setSelectedOption(event.target.value);
     setTheme(event.target.value);
-    // setTheme(theme === "dark" ? "light" : "dark");
   };
 
   const nav = [
@@ -73,27 +70,6 @@ const Header = () => {
               Light
             </label>
           </div>
-
-          {/* <label>
-            <input
-              type="radio"
-              name="options"
-              value="dark"
-              checked={theme === "dark"}
-              onChange={handleChange}
-            />
-            Dark
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="options"
-              value="light"
-              checked={theme === "light"}
-              onChange={handleChange}
-            />
-            Light
-          </label> */}
         </nav>
       </div>
     </Fragment>

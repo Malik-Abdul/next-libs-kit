@@ -3,7 +3,7 @@ import { Fragment, useContext, useState } from "react";
 
 import Link from "next/link";
 
-import ThemeContext from "@/context/ThemeContext";
+import { ThemeContext } from "@/context/ThemeContext";
 
 const SideBar = () => {
   const [activeLink, setActiveLink] = useState<number | undefined>(undefined);
