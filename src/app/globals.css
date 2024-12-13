@@ -32,7 +32,7 @@ body {
 }
 body.dark {
   background-color: #000000;
-  color: #ffffff3d;
+  color: #bdbdbda8;
 }
 body.light {
   background-color: #ffffff;
@@ -53,7 +53,7 @@ body.light {
 }
 .top-menu.dark {
   background-color: #000000;
-  color: #ffffff3d;
+  color: #bdbdbda8;
   border-bottom: 0.5px solid #3c3c43cf;
 }
 .top-menu.light {
@@ -68,7 +68,7 @@ body.light {
   font-weight: 500;
 }
 .top-eachNave.dark {
-  color: #ffffff3d;
+  color: #bdbdbda8;
 }
 .top-eachNave.light {
   color: #3c3c43cf;
@@ -94,7 +94,7 @@ body.light {
 }
 .content.dark {
   background-color: #000000;
-  color: #ffffff3d;
+  color: #bdbdbda8;
 }
 .content.light {
   background-color: #ffffff;
@@ -138,7 +138,7 @@ a {
 }
 .sideBar.dark {
   background-color: #0c0c0cf5;
-  color: #ffffff3d;
+  color: #bdbdbda8;
 }
 .sideBar.light {
   background-color: #f6f6f7;
@@ -159,7 +159,7 @@ a {
   font-weight: 500;
 }
 .side-menu a.side-eachNave.dark {
-  color: #ffffff3d;
+  color: #bdbdbda8;
 }
 .side-menu a.side-eachNave.light {
   color: rgba(60, 60, 67, 0.81);
@@ -204,7 +204,7 @@ article.posts {
 }
 .footer.dark {
   background-color: #000000;
-  color: #ffffff3d;
+  color: #bdbdbda8;
   border-top: 0.5px solid #3c3c43cf;
 }
 .footer.light {
@@ -253,7 +253,7 @@ article.posts {
   padding: 8px;
 }
 .submenu li a.dark {
-  color: #ffffff3d;
+  color: #bdbdbda8;
 }
 .submenu li a.light {
   color: #888;
@@ -275,6 +275,20 @@ article.posts {
 .submenu .submenu-item .arrow {
   font-size: 10px;
   margin-left: 15px;
+}
+.practice.btn {
+  padding: 1px;
+  margin: 1px;
+}
+.practice.btn.dark {
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+}
+.practice.btn.blue {
+  background-color: #4a81f3;
+  color: #000000;
+  border: 1px solid #ffffff;
 }
 
 /* End */

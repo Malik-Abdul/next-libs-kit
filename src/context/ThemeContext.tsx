@@ -14,17 +14,17 @@ interface ThemeContextType {
 }
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-const ThemeContextProvider = ThemeContext.Provider;
+// const ThemeContextProvider = ThemeContext.Provider;
 
 const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  let storedTheme: string | null = "dark";
-  if (typeof window !== "undefined") {
-    storedTheme = localStorage.getItem("theme");
-  }
-  console.log("storedTheme", storedTheme);
-  const [theme, setTheme] = useState<string>(
-    storedTheme === "dark" || storedTheme === "light" ? storedTheme : "dark"
-  );
+  const [theme, setTheme] = useState<string>("dark");
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -33,9 +33,9 @@ const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
   }, [theme]);
   return (
     <Fragment>
-      <ThemeContextProvider value={{ theme, setTheme }}>
+      <ThemeContext.Provider value={{ theme, setTheme }}>
         {children}
-      </ThemeContextProvider>
+      </ThemeContext.Provider>
     </Fragment>
   );
 };
