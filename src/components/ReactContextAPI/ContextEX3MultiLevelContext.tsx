@@ -30,14 +30,6 @@ const ContextBProvider = ({ children }: { children: ReactNode }) => {
   return <ContextB.Provider value="bbb">{children}</ContextB.Provider>;
 };
 
-const ComponentD = () => {
-  return (
-    <Fragment>
-      <div>ComponentD</div>
-    </Fragment>
-  );
-};
-
 const ComponentC = () => {
   return (
     <Fragment>
