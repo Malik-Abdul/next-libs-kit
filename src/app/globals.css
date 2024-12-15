@@ -278,6 +278,8 @@ article.posts {
   font-size: 10px;
   margin-left: 15px;
 }
+/* End */
+
 .practice.btn {
   padding: 1px;
   margin: 1px;
@@ -293,4 +295,36 @@ article.posts {
   border: 1px solid #ffffff;
 }
 
-/* End */
+div.paragraph {
+  font-family: Arial, sans-serif; /* Use a readable font */
+  font-size: 16px; /* Typical paragraph font size */
+  line-height: 1.6; /* Spacing between lines */
+  margin: 1em 0; /* Top and bottom spacing */
+  text-align: justify; /* Align text like in a paragraph */
+  padding: 0; /* No padding unless needed */
+}
+
+@media print {
+  /* Hide the header, aside, and footer during printing */
+  .page-header,
+  .sideBar,
+  .footer {
+    display: none;
+  }
+
+  /* Ensure the content area is formatted for print */
+  main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Set background color and text color for better printing */
+  body {
+    background: white;
+    color: black;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

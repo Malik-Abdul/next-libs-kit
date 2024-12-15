@@ -48,5 +48,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Installation
 
-1. yarn add react-redux
-2. yarn add @reduxjs/toolkit
+1. yarn add react-query
