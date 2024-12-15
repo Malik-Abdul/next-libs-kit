@@ -12,10 +12,10 @@ const Header = () => {
   };
 
   const nav = [
-    { id: 1, title: "Page 1", link: "/" },
-    { id: 2, title: "Page 2", link: "/" },
-    { id: 3, title: "Page 3", link: "/" },
-    { id: 4, title: "Page 4", link: "/" },
+    { id: 1, title: "Home", link: "/" },
+    { id: 2, title: "React Query", link: "/react-query" },
+    { id: 3, title: "React Redux", link: "/react-redux" },
+    { id: 4, title: "React Context API", link: "/react-context-api" },
     { id: 5, title: "Page 5", link: "/" },
   ];
   const context = useContext(ThemeContext);
@@ -24,7 +24,7 @@ const Header = () => {
   }
   const { theme, setTheme } = context;
 
-  console.log(theme);
+  // console.log(theme);
 
   return (
     <Fragment>
