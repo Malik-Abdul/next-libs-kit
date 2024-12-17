@@ -303,28 +303,38 @@ div.paragraph {
   text-align: justify; /* Align text like in a paragraph */
   padding: 0; /* No padding unless needed */
 }
-
 @media print {
-  /* Hide the header, aside, and footer during printing */
   .page-header,
   .sideBar,
   .footer {
     display: none;
   }
-
-  /* Ensure the content area is formatted for print */
-  main {
-    width: 100%;
+  body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+  }
+  .content {
+    width: 100%;
+    text-align: left; /* Align content to the left */
+    padding: 0 20px; /* Add some padding to avoid content touching the edges */
+  }
+  div,
+  h2 {
+    margin: 0;
+    text-align: left; /* Ensure left alignment */
   }
 
-  /* Set background color and text color for better printing */
-  body {
-    background: white;
-    color: black;
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+    font-family: monospace;
+    font-size: 14px;
   }
-  .no-print {
-    display: none !important;
+  .page-break {
+    page-break-before: always;
   }
 }

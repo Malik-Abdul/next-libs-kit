@@ -13,7 +13,16 @@ const fetchUsers = async () => {
 };
 
 const UseQueryHook: FC = () => {
-  const { isLoading, data, isError, error, isFetching } = useQuery(
+  const onSuccess = (data: User[]) => {
+    console.log("Perform some side effect after data fetching", data);
+  };
+  const onError = (error: Error) => {
+    console.log(
+      "Perform some side effect after encountering error",
+      error.message
+    );
+  };
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
     "get-json-users",
     fetchUsers,
     {
@@ -21,7 +30,12 @@ const UseQueryHook: FC = () => {
       // staleTime: 30000,
       // refetchOnMount: false,
       // refetchOnMount: "always",
-      refetchOnWindowFocus: true, // default value
+      // refetchOnWindowFocus: true, // default value
+      // refetchInterval: 3000,
+      // refetchIntervalInBackground: true,
+      // enabled: false,
+      onSuccess: onSuccess,
+      onError: onError,
     }
   );
   console.log(isLoading, isFetching);
@@ -35,6 +49,7 @@ const UseQueryHook: FC = () => {
   return (
     <Fragment>
       <h3>Use Query Hook</h3>
+      <button onClick={() => refetch()}>Fetch Data</button>
 
       {data ? data.map((user) => <div key={user.id}>{user.name}</div>) : ""}
     </Fragment>

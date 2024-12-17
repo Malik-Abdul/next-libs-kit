@@ -8,6 +8,12 @@ import {
   UseQueryHookJSX,
   cacheTime,
   staleTime,
+  refetchInterval,
+  refetchIntervalInBackground,
+  enabled,
+  refetchFunction,
+  refetchFunctionOnClick,
+  attachCallBack,
 } from "./utils";
 
 const RQTheory = () => {
@@ -76,7 +82,7 @@ const RQTheory = () => {
                 </li>
               </ul>
             </div>
-
+            {/* <div className="page-break"></div> */}
             <div className="jsxCode">
               <strong className="example">Example: 1</strong>
               <pre>
@@ -196,7 +202,7 @@ const RQTheory = () => {
             <div>
               <h3>Will discuss</h3>
               <ul>
-                <li>Basic Queries</li>
+                <li>Basics of React Query</li>
                 <li>Poll data</li>
                 <li>React Query dev tools</li>
                 <li>Create reusable query hooks for data fetching</li>
@@ -217,10 +223,7 @@ const RQTheory = () => {
               </ul>
             </div>
             <div>
-              <h3>1. Basic Queries</h3>
-              <div>
-                <strong>(React Query Basics)</strong>
-              </div>
+              <h3>1. Basics of React Query</h3>
               <div>
                 <strong>Instalation</strong>{" "}
                 <Link
@@ -248,7 +251,7 @@ const RQTheory = () => {
                   https://tanstack.com/query/v3/docs/framework/react/reference/useQuery
                 </Link>
               </div>
-              <h3>1.1. Use Query Hook</h3>
+              <h4>1.1. Use Query Hook</h4>
               <div className="paragraph">
                 Is a hook that used for all data fetching needs. This hook
                 requires atleast 2 arguments.The first argument is unique key to
@@ -265,7 +268,7 @@ const RQTheory = () => {
                   <code>{UseQueryHookJSX}</code>
                 </pre>
               </div>
-              <h3>1.2. Query Cache</h3>
+              <h4>1.2. Query Cache</h4>
               <div>
                 <strong>How useQuery works with respecting Cacheing?</strong>
               </div>
@@ -333,8 +336,7 @@ const RQTheory = () => {
                   </pre>
                 </div>
               </div>
-
-              <h3>1.3. Stale Time</h3>
+              <h4>1.3. Stale Time</h4>
               <div>
                 Another use of query cache is to reduce number of network
                 requests for data that does not necessorly change to often.{" "}
@@ -379,8 +381,8 @@ const RQTheory = () => {
                 pages there is a background reffetch request and it is the
                 safest value of staleTime
               </div>
-              <h3>1.4. Refetch Options</h3>
-              <h4>refetchOnMount</h4>
+              <h4>1.4. Refetch Options</h4>
+              <h5>refetchOnMount</h5>
               <div>
                 Default value is true, means every time switch the pages the
                 Query will trigger the nework request. The best option is true.
@@ -394,7 +396,7 @@ const RQTheory = () => {
                 data is stale or not, the query always fetch the data when the
                 component mounts.
               </div>
-              <h4>refetchOnWindowFocus</h4>
+              <h5>refetchOnWindowFocus</h5>
               <div>
                 <strong>Default value is true: </strong>
                 The UI is in sync with remote data. Means when focus to the
@@ -403,9 +405,103 @@ const RQTheory = () => {
                 or string always irrespective to weather the query is satle or
                 not.
               </div>
+              <div>
+                <h4>1.5. useQuery on click</h4>
+                <div>
+                  First of all pass the configuration enabled and set it to
+                  false. This will stop the auto fire the get request for
+                  fetching the data.
+                </div>
+                <div className="jsxCode">
+                  <strong className="example">enabled</strong>
+                  <pre>
+                    <code>{enabled}</code>
+                  </pre>
+                </div>
+                <div>
+                  useQuery returns a function called refetch, to manually
+                  trigger the query. We can pass it in onClick handler like this
+                </div>
+                <div className="jsxCode">
+                  <strong className="example">refetchFunction</strong>
+                  <pre>
+                    <code>{refetchFunction}</code>
+                  </pre>
+                </div>
+                <div className="jsxCode">
+                  <strong className="example">refetchFunctionOnClick</strong>
+                  <pre>
+                    <code>{refetchFunctionOnClick}</code>
+                  </pre>
+                </div>
+                <div>
+                  Now data will fetched onClick button, but Query cache and
+                  stale time still play the same role e.g isLoading etc.
+                </div>
+              </div>
+              <div>
+                <h4>
+                  1.6. Callbacks with useQuery: Success and Error Callbacks
+                </h4>
+                <div>
+                  While we are dealing with data fetching, sometimes we might to
+                  perform a sideeffect when the query completes for example
+                  enable button or opening modal when data is ready etc. For
+                  this react query provieds us success and error callbacks as
+                  configurations or options to the useQuery hook. First of all
+                  we will define 2 fuctions and which will be called when the
+                  Query succeed or the Query failed.
+                </div>
+                <div>
+                  Now we have to attach these functions to useQuery hook
+                </div>
+                <div>
+                  React Query can automatically injects data into these
+                  callbacks
+                </div>
+                <div className="jsxCode">
+                  <strong className="example">
+                    Success and Error Callbacks
+                  </strong>
+                  <pre>
+                    <code>{attachCallBack}</code>
+                  </pre>
+                </div>
+              </div>
             </div>
             <div>
-              <h3>1. Poll data or Polling</h3>
+              <h3>2. Poll data or Polling</h3>
+              <div>
+                Fetching data at regular intervals. For example if you have a
+                component that shows the real time price of different stocks,
+                you might to fetch data every second to update the UI. This
+                ensures the UI will always be in sync with remote data
+                irespective of configurations like refetchOnMount or
+                refetchOnWindowFocus which is dependent on user interaction. For
+                poll data we will use another configuration called
+                refetchInterval, by default it set to false. How ever you can
+                set to a number in miliseconds which will result in a continus
+                refetch of the query at that interval. For example if I set it
+                to 2000, the Query will automatically refetch every 2 seconds.
+              </div>
+              <div className="jsxCode">
+                <strong className="example">refetchInterval</strong>
+                <pre>
+                  <code>{refetchInterval}</code>
+                </pre>
+              </div>
+              <div>
+                The polling or refetching will automatically paused if the
+                window losses focus. But if you want to refetch at regular
+                intervales, there is another configuration that is
+                refetchIntervalInBackground and set it to true
+              </div>
+              <div className="jsxCode">
+                <strong className="example">refetchIntervalInBackground</strong>
+                <pre>
+                  <code>{refetchIntervalInBackground}</code>
+                </pre>
+              </div>
             </div>
           </div>
         </section>
