@@ -1,0 +1,1 @@
+// Combine Polling with callbacks: use the refetchIntervals to poll the API data every 3 seconds, behind the scene add a new user in db json file. Within the onSuccess callback chack if the number of users is equlas to a specific number then stop the polling if there is an error as well then stop the polling

@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { Fragment } from "react";
 import Polling from "./Polling";
 import LongPolling from "./LongPolling";
@@ -9,9 +8,9 @@ const RQPractice = () => {
   return (
     <Fragment>
       <div>
-        {/* <Polling /> */}
+        <Polling />
 
-        {/* <LongPolling /> */}
+        <LongPolling />
 
         <UseQueryHook />
       </div>

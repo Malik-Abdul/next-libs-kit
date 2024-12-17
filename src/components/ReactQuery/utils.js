@@ -25,12 +25,15 @@ const Polling = () => {
     }
   };
   useEffect(() => {
-    fetchData(); // Initial fetch
+    fetchData(); 
+    // Initial fetch
     const interval = setInterval(() => {
       fetchData();
-    }, 5000); // Poll every 5 seconds
+    }, 5000); 
+    // Poll every 5 seconds
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval); 
+    // Cleanup on unmount
   }, []);
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
@@ -51,20 +54,26 @@ export const getLongPollingProducts: RequestHandler = async (req, res) => {
       const results: Product[] = await db.select().from(products).limit(10);
 
       // Simulate new data creation
-      const shouldUpdate = Math.random() > 0.5; // Simulate a condition for new updates
+      const shouldUpdate = Math.random() > 0.5; 
+      // Simulate a condition for new updates
       if (shouldUpdate) {
         const randomProductIndex = Math.floor(Math.random() * results.length);
         const randomProduct = results[randomProductIndex];
-        randomProduct.price ? (randomProduct.price += 1) : null; // Example: Modify the price of a product
-        return results; // Return updated data
+        randomProduct.price ? (randomProduct.price += 1) : null; 
+        // Example: Modify the price of a product
+        return results; 
+        // Return updated data
       }
 
-      return null; // No updates
+      return null; 
+      // No updates
     };
 
     // Use a timeout loop to wait for new data or timeout after 30 seconds
-    const pollTimeout = 30000; // 30 seconds
-    const interval = 5000; // Check every 5 seconds
+    const pollTimeout = 30000; 
+    // 30 seconds
+    const interval = 5000; 
+    // Check every 5 seconds
     let elapsedTime = 0;
 
     const poll = async () => {
@@ -113,17 +122,21 @@ const LongPolling = () => {
   };
 
   useEffect(() => {
-    let isMounted = true; // To prevent setting state if component unmounts
+    let isMounted = true; 
+    // To prevent setting state if component unmounts
     const longPoll = async () => {
       while (isMounted) {
-        await fetchProducts(); // Fetch data
+        await fetchProducts(); 
+        // Fetch data
       }
     };
 
-    longPoll(); // Start long polling when the component mounts
+    longPoll(); 
+    // Start long polling when the component mounts
 
     return () => {
-      isMounted = false; // Stop long polling when the component unmounts
+      isMounted = false; 
+      // Stop long polling when the component unmounts
     };
   }, []);
 
@@ -204,6 +217,60 @@ const staleTime = `
   );
 `;
 
+const refetchInterval = `
+ const { isLoading, data, isError, error, isFetching } = useQuery(
+    "get-json-users",
+    fetchUsers,
+    { refetchInterval: 2000, }
+  );
+`;
+
+const refetchIntervalInBackground = `
+ const { isLoading, data, isError, error, isFetching } = useQuery(
+    "get-json-users",
+    fetchUsers,
+    { 
+    refetchInterval: 2000, refetchIntervalInBackground: true, 
+     }
+  );
+`;
+
+const enabled = `
+ const { isLoading, data, isError, error, isFetching } = useQuery(
+    "get-json-users",
+    fetchUsers,
+    {enabled: false,}
+  );
+`;
+
+const ReactQueryVsSimpleFetching = `
+ 1. Polling automatically paused when window looses the focus.
+`;
+
+const refetchFunction = `
+ const { isLoading, data, isError, error, isFetching, refetch } = useQuery(...)
+`;
+const refetchFunctionOnClick = `
+ <button onClick={() => refetch()}>Fetch Data</button>
+`;
+
+const attachCallBack = `
+ const onSuccess = () => {
+    console.log("Perform some side effect after data fetching");
+  };
+  const onError = () => {
+    console.log("Perform some side effect after encountering error");
+  };
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
+    "get-json-users",
+    fetchUsers,
+    {
+      onSuccess: onSuccess,
+      onError: onError,
+    }
+  );
+`;
+
 export {
   jsxCodeEx1,
   jsxCodeEx2,
@@ -211,4 +278,11 @@ export {
   UseQueryHookJSX,
   cacheTime,
   staleTime,
+  refetchInterval,
+  refetchIntervalInBackground,
+  enabled,
+  refetchFunction,
+  refetchFunctionOnClick,
+  attachCallBack,
+  ReactQueryVsSimpleFetching,
 };
