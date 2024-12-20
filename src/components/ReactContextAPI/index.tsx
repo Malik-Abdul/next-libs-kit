@@ -1,11 +1,6 @@
 import { Fragment } from "react";
 import ContextEX1 from "./ContextEX1";
-import {
-  JSXContextEX1,
-  JSXContextEX2,
-  JSXContextEX3,
-  JSXContextEX4,
-} from "./JSXCodes";
+import { JSXContextEX1, JSXContextEX2, JSXContextEX4 } from "./JSXCodes";
 
 import ContextEX2 from "./ContextEX2";
 import ContextEX3MultiLevelContext from "./ContextEX3MultiLevelContext";
@@ -33,8 +28,8 @@ const ReactContextAPI = () => {
           Context is designed to share data that can be considered “global” for
           a tree of React components, such as the current authenticated user,
           theme, or preferred language. For instance, in the code below, we
-          manually pass a "theme" prop through each level to apply styling to
-          the Button component:
+          manually pass a &quot;theme&quot; prop through each level to apply
+          styling to the Button component:
         </div>
 
         <ContextEX1 />
