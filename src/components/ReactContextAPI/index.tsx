@@ -1,9 +1,15 @@
 import { Fragment } from "react";
 import ContextEX1 from "./ContextEX1";
-import { JSXContextEX1, JSXContextEX2, JSXContextEX4 } from "./JSXCodes";
+import {
+  JSXContextEX1,
+  JSXContextEX2,
+  JSXContextEX4,
+  JSXContextReact19,
+} from "./JSXCodes";
 
 import ContextEX2 from "./ContextEX2";
 import ContextEX3MultiLevelContext from "./ContextEX3MultiLevelContext";
+import ContextReact19 from "./ContextReact19";
 
 const ReactContextAPI = () => {
   return (
@@ -64,6 +70,20 @@ const ReactContextAPI = () => {
         </div>
 
         <ContextEX3MultiLevelContext />
+
+        <h2>Context React 19</h2>
+        <ContextReact19 />
+        <div>Context as a provider</div>
+        <div>
+          In React 19, you can render Context as a provider instead of
+          Context.Provider:
+        </div>
+        <div className="jsxCode">
+          <strong className="example">Context in React 19:</strong>
+          <pre>
+            <code>{JSXContextReact19}</code>
+          </pre>
+        </div>
       </div>
     </Fragment>
   );
