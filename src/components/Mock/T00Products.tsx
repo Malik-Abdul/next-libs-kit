@@ -1,41 +1,47 @@
 import { FC, Fragment, useEffect, useState } from "react";
 
-interface Category {
+interface Product {
   id: number;
   title: string;
   categoryId: number;
 }
 
 const Products: FC<{ selectedCategory?: number }> = ({ selectedCategory }) => {
-  const [productsdata, setProductsdata] = useState<Category[]>();
+  const [productsdata, setProductsdata] = useState<Product[]>();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   useEffect(() => {
     const fetchCategories = () => {
+      setIsLoading(true);
       fetch("http://localhost:4000/products")
         .then((response) => {
           if (!response.ok) {
+            setIsLoading(false);
             throw new Error(`HTTP Error ${response.status}`);
           }
+          setIsLoading(false);
           return response.json();
         })
         .then((data) => {
           console.log("selectedCategory: ", selectedCategory);
-          const sortedData = data.sort((a: Category, b: Category) => {
+          /* eslint-disable @typescript-eslint/no-unused-expressions */
+          const sortedData = data.sort((a: Product, b: Product) => {
             if (
-              a.categoryId == selectedCategory &&
-              b.categoryId != selectedCategory
+              a.categoryId === selectedCategory &&
+              b.categoryId !== selectedCategory
             ) {
               return -1;
             } else if (
-              a.categoryId != selectedCategory &&
-              b.categoryId == selectedCategory
+              a.categoryId !== selectedCategory &&
+              b.categoryId === selectedCategory
             ) {
               return 1;
             } else {
-              a.categoryId - b.categoryId;
+              return a.categoryId - b.categoryId;
             }
           });
+          /* eslint-enable @typescript-eslint/no-unused-expressions */
+          setIsLoading(false);
           setProductsdata(sortedData);
         })
         .catch((error) => setError(error.message));

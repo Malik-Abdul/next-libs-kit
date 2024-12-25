@@ -13,9 +13,11 @@ const Categories: FC<{ getSelectedCategory: (id: number) => void }> = ({
   const [error, setError] = useState("");
   useEffect(() => {
     const fetchCategories = () => {
+      setIsLoading(true);
       fetch("http://localhost:4000/categories")
         .then((response) => {
           if (!response.ok) {
+            setIsLoading(false);
             throw new Error(`HTTP Error ${response.status}`);
           }
           return response.json();
