@@ -303,6 +303,16 @@ div.paragraph {
   text-align: justify; /* Align text like in a paragraph */
   padding: 0; /* No padding unless needed */
 }
+.pageLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.pageLinks a {
+  margin-right: 7px;
+  text-decoration: underline;
+  cursor: pointer;
+}
 @media print {
   .page-header,
   .sideBar,
