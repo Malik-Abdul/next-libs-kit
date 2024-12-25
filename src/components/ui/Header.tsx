@@ -16,7 +16,7 @@ const Header = () => {
     { id: 2, title: "React Query", link: "/react-query" },
     { id: 3, title: "React Redux", link: "/react-redux" },
     { id: 4, title: "React Context API", link: "/react-context-api" },
-    { id: 5, title: "Page 5", link: "/" },
+    { id: 5, title: "Mock Interviews", link: "/mock-interviews" },
   ];
   const context = useContext(ThemeContext);
   if (!context) {
