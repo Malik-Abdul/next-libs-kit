@@ -1,8 +1,5 @@
 import { FC, Fragment, useEffect, useState } from "react";
 
-interface Items {
-  item: number;
-}
 const T01HeavyComponentWithPagination: FC = () => {
   const [start, setStart] = useState(0);
   const [offset] = useState(10);

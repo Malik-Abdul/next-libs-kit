@@ -26,7 +26,8 @@ const Mock = () => {
             className={activeLink == link.value ? "active" : undefined}
             key={link.value}
             onClick={() => {
-              setShowMock(link.value), setActiveLink(link.value);
+              setShowMock(link.value);
+              setActiveLink(link.value);
             }}
           >
             {link.title}
