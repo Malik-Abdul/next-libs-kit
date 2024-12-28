@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
-import Categories from "./T00Categories";
-import Products from "./T00Products";
+import Categories from "./utils/T00Categories";
+import Products from "./utils/T00Products";
 
 const Mock00APIIntegration = () => {
   const [selectedCategory, setSelectedCategory] = useState(1);
