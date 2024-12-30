@@ -313,6 +313,9 @@ div.paragraph {
   text-decoration: underline;
   cursor: pointer;
 }
+strong {
+  color: #c62d48;
+}
 @media print {
   .page-header,
   .sideBar,
