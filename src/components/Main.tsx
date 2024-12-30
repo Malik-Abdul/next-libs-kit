@@ -73,8 +73,8 @@ const Main: FC = () => {
           </div>
           <div className="paragraph">
             <strong>Use Cases: </strong>SSG is suitable for pages with content
-            that doesn't change frequently, such as blogs, documentation, or
-            product listings.
+            that doesn&apos;t change frequently, such as blogs, documentation,
+            or product listings.
           </div>
           <div className="paragraph">
             <strong>Performance: </strong>Faster than SSR, because the pages are
@@ -172,8 +172,8 @@ const Main: FC = () => {
         <section>
           <h2>Hydration:</h2>
           <div className="paragra">
-            The process where a server-rendered page is "enhanced" by attaching
-            client-side JavaScript to make it interactive.
+            The process where a server-rendered page is &quot;enhanced&quot; by
+            attaching client-side JavaScript to make it interactive.
           </div>
         </section>
         <section>
