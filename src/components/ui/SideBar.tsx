@@ -20,6 +20,7 @@ const SideBar = () => {
     { id: 1, title: "React Redux", link: "/react-redux" },
     { id: 2, title: "React Query", link: "/react-query" },
     { id: 3, title: "React Context API", link: "/react-context-api" },
+    { id: 4, title: "Memoization", link: "/memoization" },
   ];
   // data/menu.js
 
