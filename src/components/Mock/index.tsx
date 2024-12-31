@@ -1,18 +1,21 @@
 "use client";
 import { Fragment, JSX, useState } from "react";
 import Mock00APIIntegration from "./Mock00APIIntegration";
-import MockT01LazyLoading from "./MockT01LazyLoading";
+import Mock01LazyLoading from "./Mock01LazyLoading";
+import Mock02Memoization from "./Mock02Memoization";
 
 const Mock = () => {
   const [showMock, setShowMock] = useState(1);
   const [activeLink, setActiveLink] = useState<number | undefined>(undefined);
   const allMocks: { [key: number]: JSX.Element } = {
     0: <Mock00APIIntegration />,
-    1: <MockT01LazyLoading />,
+    1: <Mock01LazyLoading />,
+    2: <Mock02Memoization />,
   };
   const links = [
     { title: "Mock00APIIntegration", value: 0 },
-    { title: "MockT01LazyLoading", value: 1 },
+    { title: "Mock01LazyLoading", value: 1 },
+    { title: "Mock02Memoization", value: 2 },
   ];
   return (
     <Fragment>
