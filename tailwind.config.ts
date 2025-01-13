@@ -8,6 +8,38 @@ export default {
   ],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            h1: {
+              fontSize: "2.25rem",
+              fontWeight: "700",
+              marginBottom: "1rem",
+              color: "#000",
+              backgroundColor: "#fff",
+            },
+            h2: {
+              fontSize: "1.875rem",
+              fontWeight: "700",
+              marginBottom: "0.5rem",
+              color: "#000",
+              backgroundColor: "#fff",
+            },
+          },
+        },
+        dark: {
+          css: {
+            h1: {
+              color: "#bdbdbda8",
+              backgroundColor: "#000",
+            },
+            h2: {
+              color: "#bdbdbda8",
+              backgroundColor: "#000",
+            },
+          },
+        },
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -17,5 +49,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 } satisfies Config;
