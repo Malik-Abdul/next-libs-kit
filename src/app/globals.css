@@ -1,3 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* .dark h1 {
+  @apply text-4xl font-bold text-[#bdbdbda8] bg-black mb-4;
+}
+.dark h2 {
+  @apply text-3xl font-bold text-[#bdbdbda8] bg-black mb-2;
+}
+.light h1 {
+  @apply text-4xl font-bold text-black bg-white mb-4;
+}
+.light h2 {
+  @apply text-3xl font-bold text-black bg-white mb-2;
+} */
+
+/* background-color: #ffffff;
+color: #000000; */
+/* background-color: #000000; */
+/* color: #bdbdbda8; */
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -134,13 +154,13 @@ body.light {
   font-weight: 500;
 }
 
-.content {
+/* .content {
   flex: 1;
   padding: 20px;
   box-sizing: border-box;
   margin-top: 41px;
   max-width: calc(100% - 226px);
-}
+} */
 .content.dark {
   background-color: #000000;
   color: #bdbdbda8;

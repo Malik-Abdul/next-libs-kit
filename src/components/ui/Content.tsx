@@ -12,7 +12,9 @@ const Content: FC<{ children: React.ReactNode }> = ({ children }) => {
   const { theme } = context;
   return (
     <Fragment>
-      <div className={`content ${theme}`}>{children}</div>
+      <div className={`content ${theme} mt-[41] pt-[46px] pl-10`}>
+        {children}
+      </div>
     </Fragment>
   );
 };
