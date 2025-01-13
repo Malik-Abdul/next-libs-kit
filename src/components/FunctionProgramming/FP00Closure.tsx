@@ -15,8 +15,8 @@ const FP00Closure: FC = () => {
             <strong>Lexical scope: </strong>
             Lexical scope determines how variable names are resolved in nested
             functions. If a child function is defined within a parent function,
-            the child function has access to the variables in the parent's scope
-            as well as the global scope. This means that nested (child)
+            the child function has access to the variables in the parent&apos;s
+            scope as well as the global scope. This means that nested (child)
             functions can access the scope of their parent functions.
           </div>
           <div className="jsxCode">
